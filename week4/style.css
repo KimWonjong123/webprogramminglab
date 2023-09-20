@@ -1,4 +1,4 @@
-#content-wrapper {
+#profile-wrapper {
     background: lightgray;
     font-family: serif;
 }
@@ -16,4 +16,9 @@
 
 #profile-img {
     height: 300px;
+}
+
+.course-number {
+    color: blue;
+    text-decoration: underline;
 }
