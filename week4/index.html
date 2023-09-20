@@ -62,15 +62,19 @@
             <img src="images/image1.jfif" alt="image3">
             <img src="images/image2.jfif" alt="image4">
         </div>
-        <footer>
-            <h3>Contact Me</h3>
-            <p>
-                Email: <a href="mailto:example@example.com">example@example.com</a>
-            </p>
-            <p>
-                Message: 010-9427-7848
-            </p>
-        </footer>
+        <div id="contactme-wrapper">
+            <form action="POST">
+                <h2>Contact Me</h2>
+                <div id="contactme-email-wrapper">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="contactme-email" placeholder="email">
+                </div>
+                <div id="contactme-message-wrapper">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="contactme-message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 
