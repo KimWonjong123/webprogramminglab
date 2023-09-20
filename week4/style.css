@@ -1,0 +1,19 @@
+#content-wrapper {
+    background: lightgray;
+    font-family: serif;
+}
+
+#title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+#profile-img {
+    height: 300px;
+}
