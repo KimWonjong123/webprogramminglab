@@ -1,4 +1,4 @@
-#profile-wrapper {
+#content-wrapper {
     background: lightgray;
     font-family: serif;
 }
@@ -21,4 +21,14 @@
 .course-number {
     color: blue;
     text-decoration: underline;
+}
+
+#extracurriculars-wrapper {
+    background-color: gray;
+}
+
+#extra-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: blue;
 }

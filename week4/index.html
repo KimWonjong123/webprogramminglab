@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="profile-wrapper">
-        <h1 id="title">Kim YoungJae</h1>
-        <div id="profile">
-            <div id="profile-text">
-                <h2>About Me</h3>
-                <p>
-                    Hello. My Name is Kim YoungJae and I am a student at Computer Science
-                    and engineering at SKKU. I love <a href="https://en.wikipedia.org/wiki/User_interface_design" target="_blank">User Interface Design.</a>
-                </p>
+    <div id="content-wrapper">
+        <div id="profile-wrapper">
+            <h1 id="title">Kim YoungJae</h1>
+            <div id="profile">
+                <div id="profile-text">
+                    <h2>About Me</h3>
+                        <p>
+                            Hello. My Name is Kim YoungJae and I am a student at Computer Science
+                            and engineering at SKKU. I love <a
+                                href="https://en.wikipedia.org/wiki/User_interface_design" target="_blank">User
+                                Interface Design.</a>
+                        </p>
+                </div>
+                <img id="profile-img" src="images/profile.png" alt="profile img">
             </div>
-            <img id="profile-img" src="images/profile.png" alt="profile img">
+            <div id="classes">
+                <h2>Classes</h3>
+                    <table>
+                        <th>Course Number</th>
+                        <th>Course Title</th>
+                        <tr>
+                            <td></td>
+                            <td><strong>Fall 2023</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="course-number">6.813</td>
+                            <td>User Interface Design</td>
+                        </tr>
+                        <tr>
+                            <td class="course-number">6.034</td>
+                            <td>Artificial Intelligence</td>
+                        </tr>
+                        <tr>
+                            <td class="course-number">6.806</td>
+                            <td>Introduction to Algrithms</td>
+                        </tr>
+                    </table>
+            </div>
         </div>
-        <div id="classes">
-            <h2>Classes</h3>
-            <table>
-                <th>Course Number</th>
-                <th>Course Title</th>
-                <tr>
-                    <td></td>
-                    <td><strong>Fall 2023</strong></td>
-                </tr>
-                <tr>
-                    <td class="course-number">6.813</td>
-                    <td>User Interface Design</td>
-                </tr>
-                <tr>
-                    <td class="course-number">6.034</td>
-                    <td>Artificial Intelligence</td>
-                </tr>
-                <tr>
-                    <td class="course-number">6.806</td>
-                    <td>Introduction to Algrithms</td>
-                </tr>
-            </table>
+        <div id="extracurriculars-wrapper">
+            <h2 id="extra-title">ExtraCurriculars</h2>
+            <ul>
+                <li>Dance Team</li>
+                <li>Golf</li>
+                <li>Traveling</li>
+            </ul>
+        </div>
+        <div id="img-wrapper">
+            <img src="images/image1.jfif" alt="image1">
+            <img src="images/image2.jfif" alt="image2">
+            <img src="images/image1.jfif" alt="image3">
+            <img src="images/image2.jfif" alt="image4">
         </div>
     </div>
 </body>
+
 </html>
