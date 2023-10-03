@@ -1,5 +1,9 @@
+* {
+    font-family: inherit;
+}
+
 .wrapper {
-    font-family: serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #nav-header {
