@@ -4,6 +4,10 @@ class Account {
     #balance = 2000;
     #history = [];
 
+    constructor() {
+        this.#history.push(new History(this.#balance));
+    }
+
     accNum() {
         return this.#accNumber;
     }

@@ -1,0 +1,14 @@
+input {
+    width: 200px;
+    height: 40px;
+    font-size: 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+#numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 15px;
+}

@@ -1,4 +1,4 @@
-const wrapper = document.querySelector('#main-wrapper');
+const wrapper = document.querySelector('.wrapper');
 const contents = new Map();
 
 function init() {
