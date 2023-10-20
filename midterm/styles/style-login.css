@@ -1,7 +1,3 @@
-body {
-    background-color: #ebfcfe;
-}
-
 #login-wrapper {
     display: flex;
     flex-direction: column;
@@ -13,17 +9,8 @@ body {
 }
 
 .title {
-    color: #408f93;
-}
-
-h1.login {
     font-size: 80px;
     font-weight: light;
-}
-
-.content {
-    font-size: 30px;
-    color: #2f496a;
 }
 
 input.account {
@@ -40,12 +27,6 @@ input.password {
     font-size: 32px;
     margin: 10px;
     text-align: center;
-}
-
-.border {
-    border: 4px solid #409093;
-    border-radius: 14px;
-    border-style: outset;
 }
 
 #numpad {
@@ -65,16 +46,4 @@ input.password {
     width: 40px;
     height: 40px;
     font-size: 20px;
-}
-
-button#return {
-    align-self: flex-end;
-    border: 4px solid red;
-    border-radius: 5px;
-    background-color: #e56f4d;
-    border-style: outset;
-    width: 200px;
-    height: 80px;
-    font-size: 25px;
-    color: white;
 }

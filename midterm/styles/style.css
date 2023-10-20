@@ -1,0 +1,30 @@
+body {
+    background-color: #ebfcfe;
+}
+
+.title {
+    color: #408f93;
+}
+
+.content {
+    font-size: 30px;
+    color: #2f496a;
+}
+
+.border {
+    border: 4px solid #409093;
+    border-radius: 14px;
+    border-style: outset;
+}
+
+button#return {
+    align-self: flex-end;
+    border: 4px solid red;
+    border-radius: 5px;
+    background-color: #e56f4d;
+    border-style: outset;
+    width: 200px;
+    height: 80px;
+    font-size: 25px;
+    color: white;
+}
