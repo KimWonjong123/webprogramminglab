@@ -9,7 +9,7 @@ function inputNum(btn) {
 
 function deleteInput() {
     if (accInput.value.length > 0) {
-        ccInput.value = accInput.value.slice(0, -1);
+        accInput.value = accInput.value.slice(0, -1);
         password = password.slice(0, -1);
     }
 }
@@ -21,8 +21,8 @@ function clearInput() {
 
 function enter() {
     console.log("password: " + password);
-    if (accInput.value == "1234567890123456") {
-        window.location.href = "password.html";
+    if (password == "1234567890123456") {
+        window.location.href = "pages/password.html";
     } else {
         alert("That account number does not exist!");
         clearInput();
