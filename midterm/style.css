@@ -23,10 +23,19 @@ h1.login {
 
 .content {
     font-size: 30px;
+    color: #2f496a;
 }
 
 input.account {
     width: 380px;
+    height: 50px;
+    font-size: 32px;
+    margin: 10px;
+    text-align: center;
+}
+
+input.password {
+    width: 200px;
     height: 50px;
     font-size: 32px;
     margin: 10px;

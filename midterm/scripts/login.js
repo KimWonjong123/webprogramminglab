@@ -1,27 +1,31 @@
-const accInput = document.querySelector("input.account");
+const input = document.querySelector("input.account");
 const numpad = document.querySelector("#numpad");
-let password;
+let account;
 
 function inputNum(btn) {
-    accInput.value += " ";
-    password += btn.textContent;
+    input.value += " ";
+    account += btn.textContent;
 }
 
 function deleteInput() {
-    if (accInput.value.length > 0) {
-        accInput.value = accInput.value.slice(0, -1);
-        password = password.slice(0, -1);
+    if (input.value.length > 0) {
+        input.value = input.value.slice(0, -1);
+        account = account.slice(0, -1);
     }
 }
 
 function clearInput() {
-    accInput.value = "";
-    password = "";
+    input.value = "";
+    account = "";
 }
 
 function enter() {
-    console.log("password: " + password);
-    if (password == "1234567890123456") {
+    console.log("password: " + account);
+    if (account === "") {
+        alert("Please enter your account number.");
+        return;
+    }
+    if (account === "1234567890123456") {
         window.location.href = "pages/password.html";
     } else {
         alert("That account number does not exist!");
@@ -40,10 +44,10 @@ function initBtn() {
 }
 
 function init() {
-    accInput.value = "";
-    password = "";
-    accInput.setAttribute("disabled", "disabled");
-    accInput.style.backgroundColor = "white";
+    input.value = "";
+    account = "";
+    input.setAttribute("disabled", "disabled");
+    input.style.backgroundColor = "white";
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             const btn = initBtn();
