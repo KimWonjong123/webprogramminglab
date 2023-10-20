@@ -60,3 +60,21 @@ input.password {
     height: 80px;
     font-size: 20px;
 }
+
+#numpad button.small{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+button#return {
+    align-self: flex-end;
+    border: 4px solid red;
+    border-radius: 5px;
+    background-color: #e56f4d;
+    border-style: outset;
+    width: 200px;
+    height: 80px;
+    font-size: 25px;
+    color: white;
+}
