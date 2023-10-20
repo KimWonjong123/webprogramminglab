@@ -6,6 +6,7 @@ function init() {
     contents.set('Withdraw Funds', 'withdraw.html');
     contents.set('Deposit Funds', 'deposit.html');
     contents.set('Transfer', 'transfer.html');
+    contents.set('Reset PIN', 'resetpin.html');
     for (let [key, val] of contents.entries()) {
         const btn = document.createElement('button');
         btn.classList.add('border');
@@ -17,6 +18,9 @@ function init() {
     const btn = document.createElement('button');
     btn.id = 'return';
     btn.textContent = 'Return Card';
+    btn.onclick = () => {
+        window.location.href = '../index.html';
+    }
     wrapper.appendChild(btn);
 }
 
