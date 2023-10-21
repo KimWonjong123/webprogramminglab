@@ -32,6 +32,13 @@ function clearInput() {
     inputVal = "";
 }
 
+function getInput(name) {
+    const inpt = document.createElement("input");
+    inpt.setAttribute("type", "hidden");
+    inpt.setAttribute("name", name);
+    return inpt;
+}
+
 function enter() {
     if (inputVal === "") {
         alert("Please enter amount to transfer.");
@@ -46,11 +53,16 @@ function enter() {
         const form = document.createElement("form");
         form.setAttribute("method", "get");
         form.setAttribute("action", "./transfer-confirm.html");
-        const inpt = document.createElement("input");
-        inpt.setAttribute("type", "hidden");
-        inpt.setAttribute("name", "amount");
+        const inpt = getInput("amount");
         inpt.setAttribute("value", amount);
         form.appendChild(inpt);
+        const from = getInput("from");
+        from.setAttribute("value", selectFrom.value);
+        form.appendChild(from);
+        const to = getInput("to");
+        to.setAttribute("value", selectTo.value);
+        form.appendChild(to);
+
         document.body.appendChild(form);
         form.submit();
     } catch (e) {
