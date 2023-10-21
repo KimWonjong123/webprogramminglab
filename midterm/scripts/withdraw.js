@@ -1,24 +1,28 @@
+import account from "./account.js";
+
 const input = document.querySelector("input#amount");
 let inputVal;
 
 function addAmount(amount) {
-    if (inputVal >= 0) {
+    if (inputVal >= 0 && inputVal + amount >= 0) {
         inputVal += amount;
-        input.innerText = inputVal;
+        input.value = inputVal;
     }
 }
 
 function clearAmount() {
     inputVal = 0;
-    input.innerText = inputVal;
+    input.value = inputVal;
 }
 
 function enter() {
+    if (inputVal > 0) {
+        window.location.href = `./withdraw-confirm.html?amount=${inputVal}`;
+    }
 }
 
 function quickLink(btn) {
-    inputVal = btn.innerText;
-    input.innerText = inputVal;
+    window.location.href = `./withdraw-confirm.html?amount=${btn.innerText}`;
 }
 
 function mouseover(input) {
@@ -36,7 +40,7 @@ function mouseout(input) {
 
 function init() {
     inputVal = 0;
-    input.innerText = inputVal;
+    input.value = inputVal;
     const containers = document.querySelectorAll("div.container");
 
     // Add buttons for $20, $40, $60, $80
@@ -76,16 +80,30 @@ function init() {
 
     container = container[1];
     const inputs = document.querySelectorAll("input.arrow");
-    console.log(inputs);
     for (let input of inputs) {
-        console.log(input)
+        let value = parseInt(input.id.replace(/[^0-9]/g, ""));
+        const sign = input.id.replace(/[0-9]/g, "");
+        value = value * (sign === "up" ? 1 : -1);
         input.onmouseover = () => {
             mouseover(input);
         }
         input.onmouseout = () => {
             mouseout(input);
         }
+        input.onclick = () => {
+            addAmount(value);
+        }
     }
+
+
+    const btnEnter = document.createElement("button");
+    btnEnter.classList.add("enter");
+    btnEnter.classList.add("quicklink");
+    btnEnter.innerText = "Enter";
+    btnEnter.onclick = () => {
+        enter();
+    }
+    document.querySelector(".wrapper").insertAdjacentElement("afterend", btnEnter);
 }
 
 init();

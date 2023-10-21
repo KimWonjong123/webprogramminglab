@@ -32,9 +32,13 @@ button.amount {
 }
 
 button.enter {
+    padding: 10px 0 10px 0;
     background-color: #4ba397;
     border-color: #296419;
     border-style: outset;
+    position: relative;
+    left: 60%;
+    bottom: 315px;
 }
 
 button.back {
@@ -59,10 +63,8 @@ input.arrow {
     height: 150px;
 }
 
-#up100:hover {
-    src: "../images/uparrow100copyhover.png";
-}
-
 #amount {
     text-align: center;
+    width: 150px;
+    font-size: 30px;
 }
