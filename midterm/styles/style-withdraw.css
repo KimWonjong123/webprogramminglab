@@ -1,0 +1,68 @@
+.wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 600px;
+}
+
+.content {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+button.quicklink {
+    height: 70px;
+    width: 120px;
+    font-size: 25px;
+    color: white;
+    border-radius: 5px;
+    border-width: 4px;
+}
+
+button.amount {
+    border-color: black;
+    background-color: #233046;
+}
+
+button.enter {
+    background-color: #4ba397;
+    border-color: #296419;
+    border-style: outset;
+}
+
+button.back {
+    background-color: #e25e3e;
+    border-color: red;
+    border-style: outset;
+}
+
+button.amount:hover {
+    color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.amount:hover {
+    background-color: #d0d0cf;
+}
+
+input.arrow {
+    height: 150px;
+}
+
+#up100:hover {
+    src: "../images/uparrow100copyhover.png";
+}
+
+#amount {
+    text-align: center;
+}
