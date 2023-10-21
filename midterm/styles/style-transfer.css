@@ -1,0 +1,40 @@
+.wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 15px;
+}
+
+#amount {
+    width: 200px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: #242f45;
+    font-size: 16px;
+}
+
+#back {
+    justify-self: flex-end;
+}

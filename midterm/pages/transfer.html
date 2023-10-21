@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style-transfer.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="title">From</h1>
+            <select name="from" id="from"></select>
+        </div>
+        <div class="container">
+            <input class="transfer" id="amount" type="text" placeholder="$0000.00">
+            <div id="numpad"></div>
+        </div>
+        <div class="container">
+            <h1 class="title">To</h1>
+            <select name="to" id="to"></select>
+            <button id="back">Back</button>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/transfer.js"></script>
+</body>
+</html>
