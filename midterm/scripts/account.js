@@ -1,33 +1,17 @@
 class Account {
-    #accNumber = "1234567890123456";
-    #password = "1234";
-    #balance = 2000;
-    #history = [];
+    accNumber = "1234567890123456";
+    password = "1234";
+    balance = 2000.0;
+    history = [];
 
     constructor() {
-        this.#history.push(new History(this.#balance));
+        this.history.push(new History(Date.now(), this.balance, 0, 0));
     }
 
-    accNum() {
-        return this.#accNumber;
-    }
-
-    password() {
-        return this.#password;
-    }
-
-    balance() {
-        return this.#balance;
-    }
-
-    history() {
-        return this.#history;
-    }
-
-    withdraw(balance) {
-        if (this.balance >= balance) {
-            this.balance -= balance;
-            const history = new History(balance = this.balance, fundsout = balance);
+    withdraw(amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            const history = new History(Date.now(), this.balance, amount, 0);
             this.history.push(history);
             return true;
         } else {
@@ -36,15 +20,18 @@ class Account {
     }
 
     deposit(amount) {
+        console.log(amount);
+        console.log(this.balance);
         this.balance += amount;
-        const history = new History(balance = this.balance, fundsin = amount);
+        console.log(this.balance)
+        const history = new History(Date.now(), this.balance, 0, amount);
         this.history.push(history);
     }
 
-    transfer(balance) {
-        if (this.balance >= balance) {
-            this.balance -= balance;
-            const history = new History(balance = this.balance, fundsout = balance);
+    transfer(amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            const history = new History(Date.now(), this.balance, amount, 0);
             this.history.push(history);
             return true;
         } else {
@@ -54,7 +41,7 @@ class Account {
 }
 
 class History {
-    constructor(balance, date = Date.now(), fundsout = 0, fundsin = 0) {
+    constructor(date, balance, fundsout, fundsin) {
         this.date = date;
         this.fundsin = fundsin;
         this.fundsout = fundsout;

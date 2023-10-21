@@ -1,0 +1,44 @@
+div#amount {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+button {
+    width: 110px;
+    height: 60px;
+    font-size: 25px;
+    margin-right: 1em;
+    color: white;
+}
+
+.border {
+    border-radius: 5px;
+    border-style: outset;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    border-style: inset;
+}
+
+button#yes {
+    background-color: #62a197;
+}
+
+button#yes:hover {
+    background-color: #3a6125;
+}
+
+button#no {
+    background-color: #d36648;
+    border-color: red;
+}
+
+button#no:hover {
+    background-color: #3a0c07;
+}
+
