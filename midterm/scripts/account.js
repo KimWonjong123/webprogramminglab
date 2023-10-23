@@ -5,7 +5,7 @@ class Account {
     history = [];
 
     constructor() {
-        if (localStorage.getItem('history') && localStorage.getItem('balance')) {
+        if (localStorage.getItem('history') && localStorage.getItem('balance') && localStorage.getItem('password')) {
             this.history = JSON.parse(localStorage.getItem('history'))
             this.balance = JSON.parse(localStorage.getItem('balance'))
             this.password = JSON.parse(localStorage.getItem('password'))
@@ -22,6 +22,11 @@ class Account {
         localStorage.setItem('history', JSON.stringify(this.history));
         localStorage.setItem('balance', JSON.stringify(this.balance));
         localStorage.setItem('password', JSON.stringify(this.password));
+    }
+
+    changePasssword(newPassword) {
+        this.password = newPassword;
+        this.sync();
     }
 
     withdraw(amount) {
