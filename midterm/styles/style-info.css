@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border: 2px solid darkgray;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(odd) th, td{
+    background-color: #f8f8f8;
+}
+
+tr:nth-child(even) th, td{
+    background-color: #dadada;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+tr {
+    height: 40px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+button#back {
+    margin-top: 60px;
+}

@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style-info.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <h1 class="title">Account Information</h1>
+        <div class="content">Current Balance: </div>
+        <table>
+            <colgroup>
+                <col width="50%">
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <tr>
+                <th>Date</th>
+                <th>Funds Out</th>
+                <th>Funds In</th>
+                <th>Running Balance</th>
+            </tr>
+        </table>
+        <button id="back">Back</button>
+    </div>
+
+    <script type="module" src="../scripts/info.js"></script>
 </body>
 </html>

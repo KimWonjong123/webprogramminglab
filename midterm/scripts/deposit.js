@@ -1,5 +1,3 @@
-import account from "./account.js";
-
 const input = document.querySelector("input.deposit");
 const numpad = document.querySelector("#numpad");
 const back = document.querySelector("#back");
