@@ -26,7 +26,7 @@ function enter() {
         alert("Please enter your account number.");
         return;
     }
-    if (accNum === account.accNum()) {
+    if (accNum === account.accNumber) {
         window.location.href = "pages/password.html";
     } else {
         alert("That account number does not exist!");

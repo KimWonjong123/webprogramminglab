@@ -23,6 +23,9 @@ function init() {
         withdraw();
     }
     const btnNo = document.querySelector('#no');
+    btnNo.onclick = () => {
+        window.location.href = `./withdraw.html`;
+    }
 }
 
 init();

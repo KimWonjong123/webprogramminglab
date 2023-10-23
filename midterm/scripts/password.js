@@ -24,7 +24,7 @@ function clearInput() {
 }
 
 function enter() {
-    if (password === account.password()) {
+    if (password === account.password) {
         window.location.href = "main.html";
     } else {
         if (password === "") {
