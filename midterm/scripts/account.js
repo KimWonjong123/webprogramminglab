@@ -8,10 +8,12 @@ class Account {
         if (localStorage.getItem('history') && localStorage.getItem('balance')) {
             this.history = JSON.parse(localStorage.getItem('history'))
             this.balance = JSON.parse(localStorage.getItem('balance'))
+            this.password = JSON.parse(localStorage.getItem('password'))
         } else {
             this.history.push(new History(Date.now(), this.balance, 0, 0));
             localStorage.setItem('history', JSON.stringify(this.history));
             localStorage.setItem('balance', JSON.stringify(this.balance));
+            localStorage.setItem('password', JSON.stringify(this.password));
             this.sync();
         }
     }
@@ -19,6 +21,7 @@ class Account {
     sync() {
         localStorage.setItem('history', JSON.stringify(this.history));
         localStorage.setItem('balance', JSON.stringify(this.balance));
+        localStorage.setItem('password', JSON.stringify(this.password));
     }
 
     withdraw(amount) {
