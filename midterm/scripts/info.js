@@ -1,4 +1,4 @@
-import { account } from './account.js';
+import account from './account.js';
 
 const table = document.querySelector('table');
 
@@ -15,9 +15,9 @@ function init() {
         fundsout.textContent = h.fundsout;
         fundsin.textContent = h.fundsin;
         row.appendChild(date);
-        row.appendChild(balance);
         row.appendChild(fundsout);
         row.appendChild(fundsin);
+        row.appendChild(balance);
         table.appendChild(row);
     }
 

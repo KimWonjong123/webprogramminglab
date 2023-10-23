@@ -5,7 +5,20 @@ class Account {
     history = [];
 
     constructor() {
-        this.history.push(new History(Date.now(), this.balance, 0, 0));
+        if (localStorage.getItem('history') && localStorage.getItem('balance')) {
+            this.history = JSON.parse(localStorage.getItem('history'))
+            this.balance = JSON.parse(localStorage.getItem('balance'))
+        } else {
+            this.history.push(new History(Date.now(), this.balance, 0, 0));
+            localStorage.setItem('history', JSON.stringify(this.history));
+            localStorage.setItem('balance', JSON.stringify(this.balance));
+            this.sync();
+        }
+    }
+
+    sync() {
+        localStorage.setItem('history', JSON.stringify(this.history));
+        localStorage.setItem('balance', JSON.stringify(this.balance));
     }
 
     withdraw(amount) {
@@ -13,6 +26,7 @@ class Account {
             this.balance -= amount;
             const history = new History(Date.now(), this.balance, amount, 0);
             this.history.push(history);
+            this.sync();
             return true;
         } else {
             return false;
@@ -26,6 +40,8 @@ class Account {
         console.log(this.balance)
         const history = new History(Date.now(), this.balance, 0, amount);
         this.history.push(history);
+        this.sync();
+
     }
 
     transfer(amount) {
@@ -33,6 +49,7 @@ class Account {
             this.balance -= amount;
             const history = new History(Date.now(), this.balance, amount, 0);
             this.history.push(history);
+            this.sync();
             return true;
         } else {
             return false;
