@@ -1,8 +1,9 @@
-const input = document.querySelector("input.deposit");
-const numpad = document.querySelector("#numpad");
-const back = document.querySelector("#back");
+const input = document.querySelector("input.deposit"); // input field
+const numpad = document.querySelector("#numpad"); // numpad container div
+const back = document.querySelector("#back"); // back button
 let inputVal;
 
+// input number to input field
 function inputNum(btn) {
     input.value += btn.innerText;
     inputVal += btn.innerText;
@@ -12,6 +13,7 @@ function inputNum(btn) {
     }
 }
 
+// delete last character from input field
 function deleteInput(btn) {
     if (input.value.length > 0) {
         if(inputVal.indexOf(".") === inputVal.length - 1) {
@@ -29,15 +31,21 @@ function clearInput() {
 }
 
 function enter() {
+    // check if input is empty
     if (inputVal === "") {
         alert("Please enter amount to deposit.");
         return;
     }
     try {
+        // check if input is a valid number
         const amount = parseFloat(inputVal);
+        
+        // create form and submit to deposit-confirm.html
         const form = document.createElement("form");
         form.setAttribute("method", "get");
         form.setAttribute("action", "./deposit-confirm.html");
+        
+        // create input field and append to form
         const inpt = document.createElement("input");
         inpt.setAttribute("type", "hidden");
         inpt.setAttribute("name", "amount");
@@ -49,9 +57,9 @@ function enter() {
         alert("Please enter a valid amount.");
         clearInput();
     }
-
 }
 
+// initialize button for numpad
 function initBtn() {
     const btn = document.createElement("button");
     btn.classList.add("border");
@@ -63,6 +71,7 @@ function initBtn() {
 }
 
 function init() {
+    // initialize input field, back button, and numpad
     input.value = "";
     inputVal = "";
     input.setAttribute("disabled", "disabled");
@@ -70,6 +79,8 @@ function init() {
     back.onclick = () => {
         window.location.href = "./main.html";
     }
+
+    // 1-9 buttons
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             const btn = initBtn();

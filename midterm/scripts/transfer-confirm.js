@@ -4,6 +4,7 @@ const amount = document.querySelector('#amount');
 const from = document.querySelector('#from');
 const to = document.querySelector('#to');
 
+// validate if transfer is possible
 function validate(urlParams) {
     if (from.innerText === to.innerText) {
         alert("Cannot transfer to the same account.");
@@ -18,6 +19,7 @@ function validate(urlParams) {
 
 
 function init() {
+    // fetch data from url and display transfer information on page
     const urlParams = new URLSearchParams(window.location.search);
     amount.innerText = `$${urlParams.get('amount')}`;
     from.innerText = `From ${urlParams.get('from')}`;

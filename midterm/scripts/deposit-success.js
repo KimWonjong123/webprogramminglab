@@ -1,3 +1,4 @@
+// initialize buttons and redirect to main page, deposit page, and index page
 function init() {
     const btnHome = document.querySelector("button#home");
     btnHome.onclick = () => {

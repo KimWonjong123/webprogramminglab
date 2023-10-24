@@ -1,4 +1,5 @@
 function init() {
+    // initialize buttons
     let btn = document.querySelector('#home');
     btn.onclick = () => {
         window.location.href = `./main.html`;

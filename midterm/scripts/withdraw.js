@@ -3,6 +3,7 @@ import account from "./account.js";
 const input = document.querySelector("input#amount");
 let inputVal;
 
+// input number to input field
 function addAmount(amount) {
     if (inputVal >= 0 && inputVal + amount >= 0) {
         inputVal += amount;
@@ -10,27 +11,24 @@ function addAmount(amount) {
     }
 }
 
-function clearAmount() {
-    inputVal = 0;
-    input.value = inputVal;
-}
-
+// clear input field
 function enter() {
     if (inputVal > 0) {
         window.location.href = `./withdraw-confirm.html?amount=${inputVal}`;
     }
 }
 
+// quick link to withdraw-confirm.html
 function quickLink(btn) {
     window.location.href = `./withdraw-confirm.html?amount=${btn.innerText}`;
 }
 
+// change image on mouseover and mouseout to indicate clickability
 function mouseover(input) {
     let src = input.src;
     src = src.replace(".png", "hover.png");
     input.src = src;
 }
-
 function mouseout(input) {
     let src = input.src;
     src = src.replace("hover", "");
@@ -78,12 +76,16 @@ function init() {
     container.appendChild(btnBack);
 
 
+    // Add buttons for +100, +20, -20, -100
     container = container[1];
     const inputs = document.querySelectorAll("input.arrow");
     for (let input of inputs) {
+        // parse amount from id
         let value = parseInt(input.id.replace(/[^0-9]/g, ""));
         const sign = input.id.replace(/[0-9]/g, "");
         value = value * (sign === "up" ? 1 : -1);
+
+        // add event listeners
         input.onmouseover = () => {
             mouseover(input);
         }
@@ -96,6 +98,7 @@ function init() {
     }
 
 
+    // Add Enter button
     const btnEnter = document.createElement("button");
     btnEnter.classList.add("enter");
     btnEnter.classList.add("quicklink");

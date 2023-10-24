@@ -1,9 +1,12 @@
 import account from './account.js';
 
+// table to display transaction history
 const table = document.querySelector('table');
 
 function init() {
     const history = account.history;
+
+    // display transaction history for each row
     for (let h of history) {
         const row = document.createElement('tr');
         const date = document.createElement('td');
@@ -21,6 +24,7 @@ function init() {
         table.appendChild(row);
     }
 
+    // initialize back button
     const back = document.querySelector('button#back');
     back.addEventListener('click', () => {
         window.location.href = 'main.html';

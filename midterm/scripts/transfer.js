@@ -7,6 +7,7 @@ const selectFrom = document.querySelector("select#from");
 const selectTo = document.querySelector("select#to");
 let inputVal;
 
+// input number to input field
 function inputNum(btn) {
     input.value += btn.innerText;
     inputVal += btn.innerText;
@@ -16,6 +17,7 @@ function inputNum(btn) {
     }
 }
 
+// delete last character from input field
 function deleteInput(btn) {
     if (input.value.length > 0) {
         if(inputVal.indexOf(".") === inputVal.length - 1) {
@@ -27,11 +29,13 @@ function deleteInput(btn) {
     }
 }
 
+// clear input field
 function clearInput() {
     input.value = "";
     inputVal = "";
 }
 
+// create input field
 function getInput(name) {
     const inpt = document.createElement("input");
     inpt.setAttribute("type", "hidden");
@@ -40,19 +44,27 @@ function getInput(name) {
 }
 
 function enter() {
+    // check if input is empty
     if (inputVal === "") {
         alert("Please enter amount to transfer.");
         return;
     }
+
+    // check if input is a valid number
     if (selectFrom.value === "" || selectTo.value === "") {
         alert("Please select an account.");
         return;
     }
+
     try {
         const amount = parseFloat(inputVal);
+
+        // create form and submit to deposit-confirm.html
         const form = document.createElement("form");
         form.setAttribute("method", "get");
         form.setAttribute("action", "./transfer-confirm.html");
+        
+        // create input field to store trransaction details and append to form
         const inpt = getInput("amount");
         inpt.setAttribute("value", amount);
         form.appendChild(inpt);
@@ -71,6 +83,7 @@ function enter() {
     }
 }
 
+// create default option that is only shown but cannot be chosen for select element
 function getDefaultOption() {
     const defaultOption = new Option("Choose an Account", ""); // default option but not shown in the list
     defaultOption.selected = true;
@@ -79,6 +92,7 @@ function getDefaultOption() {
     return defaultOption;
 }
 
+// initialize button for numpad
 function initBtn() {
     const btn = document.createElement("button");
     btn.classList.add("border");
@@ -90,6 +104,7 @@ function initBtn() {
 }
 
 function init() {
+    // initialize input field, back button, and numpad
     input.value = "";
     inputVal = "";
     input.setAttribute("disabled", "disabled");
@@ -98,6 +113,7 @@ function init() {
         window.location.href = "./main.html";
     }
     
+    // initialize select elements
     selectFrom.appendChild(getDefaultOption());
     const accNum = account.accNumber;
     selectFrom.appendChild(new Option(accNum, accNum));

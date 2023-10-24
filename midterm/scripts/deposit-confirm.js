@@ -1,6 +1,7 @@
 import account from "./account.js";
 
 function init() {
+    // get amount from url
     const url = new URL(window.location.href);
     const amount = parseFloat(url.searchParams.get("amount"));
     const amountToText = `$${amount}?`;

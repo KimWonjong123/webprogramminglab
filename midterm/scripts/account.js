@@ -1,3 +1,5 @@
+// Account class to handle all account related functions
+// use localStorage to store account information
 class Account {
     accNumber = "1234567890123456";
     password = "1234";
@@ -5,11 +7,12 @@ class Account {
     history = [];
 
     constructor() {
+        // check if account information exists in localStorage and load it
         if (localStorage.getItem('history') && localStorage.getItem('balance') && localStorage.getItem('password')) {
             this.history = JSON.parse(localStorage.getItem('history'))
             this.balance = JSON.parse(localStorage.getItem('balance'))
             this.password = JSON.parse(localStorage.getItem('password'))
-        } else {
+        } else { // if not, create a new account
             this.history.push(new History(Date.now(), this.balance, 0, 0));
             localStorage.setItem('history', JSON.stringify(this.history));
             localStorage.setItem('balance', JSON.stringify(this.balance));
@@ -18,6 +21,7 @@ class Account {
         }
     }
 
+    // sync account information to localStorage
     sync() {
         localStorage.setItem('history', JSON.stringify(this.history));
         localStorage.setItem('balance', JSON.stringify(this.balance));
@@ -65,6 +69,7 @@ class Account {
     }
 }
 
+// History class to store transaction information of an account
 class History {
     constructor(date, balance, fundsout, fundsin) {
         this.date = date;
@@ -74,6 +79,8 @@ class History {
     }
 }
 
+// create a single instance of Account class for this application
 const account = new Account();
 
+// export the instance of Account class
 export default account;
