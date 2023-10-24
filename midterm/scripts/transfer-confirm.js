@@ -27,7 +27,7 @@ function init() {
     const btnYes = document.querySelector('#yes');
     btnYes.onclick = () => {
         if (validate(urlParams)) {
-            account.transfer(parseInt(urlParams.get('amount')));
+            account.transfer(parseFloat(urlParams.get('amount')));
             window.location.href = "./transfer-success.html";
         }
     }

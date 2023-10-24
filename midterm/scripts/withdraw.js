@@ -81,7 +81,7 @@ function init() {
     const inputs = document.querySelectorAll("input.arrow");
     for (let input of inputs) {
         // parse amount from id
-        let value = parseInt(input.id.replace(/[^0-9]/g, ""));
+        let value = parseFloat(input.id.replace(/[^0-9]/g, ""));
         const sign = input.id.replace(/[0-9]/g, "");
         value = value * (sign === "up" ? 1 : -1);
 

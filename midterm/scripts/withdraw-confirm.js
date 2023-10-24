@@ -6,7 +6,7 @@ let value;
 function withdraw() {
     // validate if withdraw is possible
     if (account.balance >= value) {
-        account.withdraw(parseInt(value));
+        account.withdraw(parseFloat(value));
         window.location.href = `./withdraw-success.html`;
     }
     else {

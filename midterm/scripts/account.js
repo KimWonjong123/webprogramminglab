@@ -50,7 +50,7 @@ class Account {
         console.log(this.balance);
         this.balance += amount;
         console.log(this.balance)
-        const history = new History(Date.now(), this.balance, 0, amount);
+        const history = new History(Date.now(), this.balance, 0.0, amount);
         this.history.push(history);
         this.sync();
 
@@ -59,7 +59,7 @@ class Account {
     transfer(amount) {
         if (this.balance >= amount) {
             this.balance -= amount;
-            const history = new History(Date.now(), this.balance, amount, 0);
+            const history = new History(Date.now(), this.balance, amount, 0.0);
             this.history.push(history);
             this.sync();
             return true;
