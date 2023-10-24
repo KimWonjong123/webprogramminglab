@@ -23,7 +23,7 @@ function init() {
     const urlParams = new URLSearchParams(window.location.search);
     amount.innerText = `$${urlParams.get('amount')}`;
     from.innerText = `From ${urlParams.get('from')}`;
-    to.innerText = `From ${urlParams.get('to')}`;
+    to.innerText = `To ${urlParams.get('to')}`;
     const btnYes = document.querySelector('#yes');
     btnYes.onclick = () => {
         if (validate(urlParams)) {
