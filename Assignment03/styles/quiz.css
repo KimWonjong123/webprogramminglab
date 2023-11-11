@@ -16,6 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3vw;
 }
 
 #status {
@@ -64,4 +65,49 @@ progress::-webkit-progress-value {
     font-size: 3.3vw;
     font-weight: 900;
     color: #377e7f;
+}
+
+#choices {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+#choiceContainer {
+    width: 100%;
+    border-radius: 1vw;
+}
+
+.choiceIndex {
+    position: relative;
+    font-size: 2vw;
+    font-weight: 900;
+    background-color: #377e7f;
+    border-radius: 1vw;
+    border: none;
+    color: white;
+    height: 4vw;
+    width: 5vw;
+    z-index: 1;
+}
+
+.choiceText {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5vw;
+    text-align: left;
+    margin: 0;
+    padding-left: 5.5vw;
+    height: 4vw;
+    border-radius: 1vw;
+    background-color: white;
+    border: 0;
+}
+
+.choiceText:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgba(46, 229, 157, 0.4);
 }
