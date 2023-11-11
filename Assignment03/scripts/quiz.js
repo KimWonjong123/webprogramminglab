@@ -61,6 +61,10 @@ function verifyAnswer(selectedAnswer) {
 
 function loadQuestion() {
     if (qNumber >= 4) {
+        if (sessionStorage.getItem("point") !== null) {
+            sessionStorage.removeItem("point");
+        }
+        sessionStorage.setItem("point", point);
         window.location.href = "result.html";
     } else {
         qNumber++;
