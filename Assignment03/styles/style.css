@@ -4,7 +4,7 @@ body {
 
 .wrapper#main{
     margin: 0;
-    background-image: url("./images/background.png");
+    background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
@@ -19,12 +19,12 @@ body {
     padding-top: 15%;
 }
 
-h1 {
+h1#title {
     color: #377e7f;
     font-size: 5vw;
 }
 
-button {
+button#start {
     border-radius: 8vw;
     border-width: 1px;
     border-color: #377e7f;
@@ -33,4 +33,9 @@ button {
     font-size: 2vw;
     width: 20vw;
     height: 4vw;
+}
+
+button#start:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgba(46, 229, 157, 0.4);
 }
