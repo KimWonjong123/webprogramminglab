@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <ul class="tabs">
+                <li class="tab active" tab="loginTab">Login</li>
+                <li class="tab" tab="signupTab">Sign Up</li>
+            </ul>
+            <div class="tab-content active" id="loginTab">
+                <form action="index.html" method="post">
+                    <h3>Login</h3>
+                    <div>Enter user name and password:</div>
+                    <div>Email</div>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <div>Password</div>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <button id="login">Login</button>
+                </form>
+            </div>
+            <div class="tab-content" id="signupTab">
+                <form action="index.html" method="post">
+                    <h3>Sign up</h3>
+                    <div>Fill the form:</div>
+                    <div>First name</div>
+                    <input type="text" name="first-name" id="first-name" placeholder="First name">
+                    <div>Last name</div>
+                    <input type="text" name="last-name" id="last-name" placeholder="Last name">
+                    <div id="gender-container">
+                        <label><input type="radio" name="gender" value="male">Male</label>
+                        <label><input type="radio" name="gender" value="female">Female</label>
+                    </div>
+                    <div>Email</div>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <div>Password</div>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <div>Confirm Password</div>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+                    <button id="signup">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
