@@ -183,7 +183,7 @@ $(document).ready(function () {
             password: {
                 required: "Please enter your password!",
                 passwordRegex:
-                    "Requirement: at lest 6 characters, one capital letter, one lowercase letter, at least one digit, and one special character!",
+                    "Requirement: at lest 6 characters, one capital letter,<br/>one lowercase letter, at least one digit,<br/>and one special character!",
             },
             confirmpassword: {
                 required: "Please re-enter your password!",
