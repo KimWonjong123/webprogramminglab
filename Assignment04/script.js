@@ -2,7 +2,6 @@ let email = "";
 let password = "";
 
 $(document).ready(function () {
-
     // hide all tab content and show the first one
     $(".tab-content").hide();
     $(".tab-content.active").show();
@@ -15,7 +14,8 @@ $(document).ready(function () {
         $(this).addClass("active");
         $(".tab-content.active")
             .stop() // stop the current animation
-            .fadeOut(500, () => { // first fade out the current tab content and then fade in the new tab content
+            .fadeOut(500, () => {
+                // first fade out the current tab content and then fade in the new tab content
                 $(".tab-content.active").removeClass("active");
                 $("#" + tab_id)
                     .addClass("active")
@@ -114,21 +114,22 @@ $(document).ready(function () {
             password: "Please enter your password!",
         },
         submitHandler: function (form) {
-            if ($("#email").val() === email && $("#password").val() === password) {
+            if (
+                $("#email").val() === email &&
+                $("#password").val() === password
+            ) {
                 // when login is success, remove all children of login-form and append a new h2 tag
                 $("#login-form").children().remove();
-                $("#login-form").append(
-                    `<h2>You are logged in.</h2>`
-                );
-            }
-            else {
+                $("#login-form").append(`<h2>You are logged in.</h2>`);
+            } else {
                 // when login is failed, show invalid credentials
-                $("#login-state").text("Credentials do not match!").addClass("invalidCredentials");
+                $("#login-state")
+                    .text("Credentials do not match!")
+                    .addClass("invalidCredentials");
             }
         },
         success: function (label, element) {
             // when input is valid, remove error label and show check image
-            label.css("background", "none");
             $(element)
                 .siblings()
                 .filter("." + $(element).attr("name"))
@@ -167,7 +168,8 @@ $(document).ready(function () {
             firstname: {
                 required: "Please enter your first name!",
                 noDigit: "First name cannot contain numbers!",
-                startWithCapital: "First name must start with a capital letter!",
+                startWithCapital:
+                    "First name must start with a capital letter!",
             },
             lastname: {
                 required: "Please enter your last name!",
@@ -203,13 +205,14 @@ $(document).ready(function () {
             email = $("#email-signup").val();
             password = $("#password-signup").val();
             $("#signup-form").children().remove();
-            $("#signup-form").append(
-                `<h2>You are signed up.</h2>`
-            );
+            $("#signup-form").append(`<h2>You are signed up.</h2>`);
         },
         success: function (label, element) {
             // when input is valid, remove error label and show check image
-            $(element).siblings().filter("."+$(element).attr("name")).removeClass("hidden");
-        }
+            $(element)
+                .siblings()
+                .filter("." + $(element).attr("name"))
+                .removeClass("hidden");
+        },
     });
 });
