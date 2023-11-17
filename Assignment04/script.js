@@ -1,18 +1,5 @@
 let email = "";
 let password = "";
-const checkImg = document.createElement("img");
-checkImg.src = "check.png";
-
-// for (let i = 0; i < inputs.length; i++) {
-//     console.log(inputs[i]);
-//     inputs[i].addEventListener("onChange", () => {
-//         if (inputs[i].getClassList().contains("valid")) {
-//             console.log("valid" + inputs[i].value);
-//         } else {
-//             console.log("invalid" + inputs[i].value);
-//         }
-//     });
-// }
 
 $(document).ready(function () {
     $(".tab-content").hide();
@@ -40,12 +27,42 @@ $(document).ready(function () {
         );
     });
 
+    $.validator.addMethod("noDigit", (value, element) => {
+        return !value.match(/\d/);
+    });
+
+    $.validator.addMethod("startWithCapital", (value, element) => {
+        return value.match(/^[A-Z]/);
+    });
+
     $.validator.setDefaults({
         onkeyup: function (element) {
-            $(element).valid();
+            if (!$(element).valid()) {
+                $(element).siblings().filter("img." + $(element).attr("name")).addClass("hidden");
+            }
+            $("label.error").each((idx, item) => {
+                if ($(item).text() === "") {
+                    $(item).addClass("noBackground");
+                }
+                else {
+                    $(item).removeClass("noBackground");
+                }
+            });
         },
         onfocusin: function (element) {
-            $(element).valid();
+            if (!$(element).valid()) {
+                $(element)
+                    .siblings()
+                    .filter("img." + $(element).attr("name"))
+                    .addClass("hidden");
+            }
+            $("label.error").each((idx, item) => {
+                if ($(item).text() === "") {
+                    $(item).addClass("noBackground");
+                } else {
+                    $(item).removeClass("noBackground");
+                }
+            });
         },
     });
 
@@ -86,8 +103,16 @@ $(document).ready(function () {
 
     $("#signup-form").validate({
         rules: {
-            firstname: "required",
-            lastname: "required",
+            firstname: {
+                required: true,
+                noDigit: true,
+                startWithCapital: true,
+            },
+            lastname: {
+                required: true,
+                noDigit: true,
+                startWithCapital: true,
+            },
             email: {
                 required: true,
                 email: true,
@@ -103,8 +128,16 @@ $(document).ready(function () {
             gender: "required",
         },
         messages: {
-            firstname: "Please enter your first name!",
-            lastname: "Please enter your last name!",
+            firstname: {
+                required: "Please enter your first name!",
+                noDigit: "First name cannot contain numbers!",
+                startWithCapital: "First name must start with a capital letter!",
+            },
+            lastname: {
+                required: "Please enter your last name!",
+                noDigit: "Last name cannot contain numbers!",
+                startWithCapital: "Last name must start with a capital letter!",
+            },
             email: {
                 required: "Please enter your email address!",
                 email: "Please enter a valid email address!",
@@ -138,7 +171,6 @@ $(document).ready(function () {
             );
         },
         success: function (label, element) {
-            label.css("background", "none");
             $(element).siblings().filter("."+$(element).attr("name")).removeClass("hidden");
         }
     });

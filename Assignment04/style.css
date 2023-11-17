@@ -121,6 +121,10 @@ img {
     display: inline-block;
 }
 
+.noBackground {
+    background: none !important;
+}
+
 .invalidCredentials {
     color: red;
 }
