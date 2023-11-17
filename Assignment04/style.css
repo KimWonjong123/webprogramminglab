@@ -12,7 +12,7 @@ body {
 }
 
 #container {
-    width: 60vh;
+    width: 50vh;
     margin-top: 20vh;
     text-align: center;
 }
@@ -39,7 +39,6 @@ ul.tabs li.active {
     color: black;
     border-top: 5px solid #2F558E;
     padding : 12px 25px 15px 25px;
-    /* box-shadow: 0 3px 0 3px #2F558E inset; */
 }
 
 input {
@@ -48,22 +47,21 @@ input {
     border: 1px solid white;
     background-color: black;
     color: white;
-    padding: 10px 5px;
+    padding: 1vh 0.5vh;
 }
 
 button {
     box-sizing: bouter-box;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 2vh;
     height: 7vh;
-    font-size: 1.5em;
+    font-size: 1.7rem;
     color: white;
     background-color: #2F558E;
     border: none;
 }
 
 .tab-content {
-    display: none;
     padding: 15px 0;
     text-align: left;
 }
@@ -78,5 +76,5 @@ button {
 }
 
 .tab-content.active div {
-    margin-top: 20px;
+    margin-top: 2.5vh;
 }
