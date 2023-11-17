@@ -2,17 +2,20 @@ let email = "";
 let password = "";
 
 $(document).ready(function () {
+
+    // hide all tab content and show the first one
     $(".tab-content").hide();
     $(".tab-content.active").show();
 
+    // when tab is clicked, fade out and fade in the tab content
     $("ul.tabs li").click(function () {
         var tab_id = $(this).attr("tab");
 
         $("ul.tabs li").removeClass("active");
         $(this).addClass("active");
         $(".tab-content.active")
-            .stop()
-            .fadeOut(500, () => {
+            .stop() // stop the current animation
+            .fadeOut(500, () => { // first fade out the current tab content and then fade in the new tab content
                 $(".tab-content.active").removeClass("active");
                 $("#" + tab_id)
                     .addClass("active")
@@ -21,25 +24,34 @@ $(document).ready(function () {
             });
     });
 
+    // validate password condition
     $.validator.addMethod("passwordRegex", (value, element) => {
         return value.match(
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{6,}$/
         );
     });
 
+    // validate if there is no digit
     $.validator.addMethod("noDigit", (value, element) => {
         return !value.match(/\d/);
     });
 
+    // validate if the first letter is capital
     $.validator.addMethod("startWithCapital", (value, element) => {
         return value.match(/^[A-Z]/);
     });
 
     $.validator.setDefaults({
+        // everytime keyup or focusin, check if the input is valid
         onkeyup: function (element) {
             if (!$(element).valid()) {
+                // if input is invalid, remove check image on current input
                 $(element).siblings().filter("img." + $(element).attr("name")).addClass("hidden");
             }
+
+            // check every error label
+            // if it is empty, that label is valid
+            // then add noBackground class to remove background
             $("label.error").each((idx, item) => {
                 if ($(item).text() === "") {
                     $(item).addClass("noBackground");
@@ -66,6 +78,7 @@ $(document).ready(function () {
         },
     });
 
+    // validator for login form
     $("#login-form").validate({
         rules: {
             email: {
@@ -83,16 +96,19 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             if ($("#email").val() === email && $("#password").val() === password) {
+                // when login is success, remove all children of login-form and append a new h2 tag
                 $("#login-form").children().remove();
                 $("#login-form").append(
                     `<h2>You are logged in.</h2>`
                 );
             }
             else {
+                // when login is failed, show invalid credentials
                 $("#login-state").text("Credentials do not match!").addClass("invalidCredentials");
             }
         },
         success: function (label, element) {
+            // when input is valid, remove error label and show check image
             label.css("background", "none");
             $(element)
                 .siblings()
@@ -101,6 +117,7 @@ $(document).ready(function () {
         },
     });
 
+    // validator for signup form
     $("#signup-form").validate({
         rules: {
             firstname: {
@@ -156,6 +173,7 @@ $(document).ready(function () {
             },
         },
         errorPlacement: function (error, element) {
+            // if input is radio, append error label to its parent since two radio buttons are in one div
             if (element.is(":radio")) {
                 error.appendTo(element.parent());
             } else {
@@ -171,6 +189,7 @@ $(document).ready(function () {
             );
         },
         success: function (label, element) {
+            // when input is valid, remove error label and show check image
             $(element).siblings().filter("."+$(element).attr("name")).removeClass("hidden");
         }
     });
