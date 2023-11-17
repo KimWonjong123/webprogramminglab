@@ -1,6 +1,5 @@
 body {
     margin: 0;
-
 }
 
 #wrapper {
@@ -12,7 +11,7 @@ body {
 }
 
 #container {
-    width: 50vh;
+    width: 40vh;
     margin-top: 20vh;
     text-align: center;
 }
@@ -61,7 +60,16 @@ input[type="radio"] {
 
 input:focus {
     outline: none;
+}
 
+label.error {
+    position: absolute;
+    left: 50%;
+    transform: translateX(17vh);
+    background-color: #2F558E;
+    padding: 0.5vh;
+    margin-left: 2vh;
+    border-radius: 0.5vh;
 }
 
 button {
@@ -94,4 +102,25 @@ button {
 
 #gender-container {
     display: flex;
+}
+
+img {
+    background: none;
+    position: absolute;
+    height: 2.5vh;
+    left: 50%;
+    margin-top: 0.5vh;
+    transform: translateX(13vh);
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.invalidCredentials {
+    color: red;
 }

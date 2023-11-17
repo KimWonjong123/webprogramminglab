@@ -21,11 +21,14 @@
             <div class="tab-content active" id="loginTab">
                 <form action="" method="post" id="login-form">
                     <h2>Login</h2>
-                    <div>Enter user name and password:</div>
+                    <div id="login-state">Enter user name and password:</div>
                     <div>Email</div>
                     <input type="email" name="email" id="email" placeholder="Email">
+                    <img class="hidden email" src="check.png">
                     <div>Password</div>
                     <input type="password" name="password" id="password" placeholder="Password">
+                    <img class="hidden password" src="check.png">
+                    <div></div>
                     <button id="login">Login</button>
                 </form>
             </div>
@@ -35,20 +38,27 @@
                     <div>Fill the form:</div>
                     <div>First name</div>
                     <input type="text" name="firstname" id="firstname" placeholder="First name">
+                    <img class="hidden firstname" src="check.png">
                     <div>Last name</div>
                     <input type="text" name="lastname" id="lastname" placeholder="Last name">
+                    <img class="hidden lastname" src="check.png">
                     <div id="gender-container">
                         <input type="radio" name="gender" value="male">
                         <label>Male</label>
                         <input type="radio" name="gender" value="female">
                         <label>Female</label>
+                        <img class="hidden gender" src="check.png">
                     </div>
                     <div>Email</div>
                     <input type="email" name="email" id="email-signup" placeholder="Email">
+                    <img class="hidden email" src="check.png">
                     <div>Password</div>
                     <input type="password" name="password" id="password-signup" placeholder="Password">
+                    <img class="hidden password" src="check.png">
                     <div>Confirm Password</div>
                     <input type="password" name="confirmpassword" id="confirm-password" placeholder="Confirm Password">
+                    <img class="hidden confirmpassword" src="check.png">
+                    <div></div>
                     <button id="signup">Sign Up</button>
                 </form>
             </div>
