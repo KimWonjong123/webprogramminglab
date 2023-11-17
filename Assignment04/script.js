@@ -42,11 +42,14 @@ $(document).ready(function () {
     });
 
     $.validator.setDefaults({
-        // everytime keyup or focusin, check if the input is valid
+        // everytime keyup or focusin or clicked, check if the input is valid
         onkeyup: function (element) {
             if (!$(element).valid()) {
                 // if input is invalid, remove check image on current input
-                $(element).siblings().filter("img." + $(element).attr("name")).addClass("hidden");
+                $(element)
+                    .siblings()
+                    .filter("img." + $(element).attr("name"))
+                    .addClass("hidden");
             }
 
             // check every error label
@@ -55,13 +58,29 @@ $(document).ready(function () {
             $("label.error").each((idx, item) => {
                 if ($(item).text() === "") {
                     $(item).addClass("noBackground");
-                }
-                else {
+                } else {
                     $(item).removeClass("noBackground");
                 }
             });
         },
         onfocusin: function (element) {
+            if (!$(element).is(":radio")) {
+                if (!$(element).valid()) {
+                    $(element)
+                        .siblings()
+                        .filter("img." + $(element).attr("name"))
+                        .addClass("hidden");
+                }
+                $("label.error").each((idx, item) => {
+                    if ($(item).text() === "") {
+                        $(item).addClass("noBackground");
+                    } else {
+                        $(item).removeClass("noBackground");
+                    }
+                });
+            }
+        },
+        onclick: function (element) {
             if (!$(element).valid()) {
                 $(element)
                     .siblings()
