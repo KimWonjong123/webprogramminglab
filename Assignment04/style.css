@@ -50,6 +50,20 @@ input {
     padding: 1vh 0.5vh;
 }
 
+input.error {
+    border: 1px solid red;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0 1vh;
+}
+
+input:focus {
+    outline: none;
+
+}
+
 button {
     box-sizing: bouter-box;
     width: 100%;
@@ -62,19 +76,22 @@ button {
 }
 
 .tab-content {
-    padding: 15px 0;
     text-align: left;
 }
 
 .tab-content.active {
-    display: inherit;
     background-color: #111317;
     color: white;
-    padding: 20px 20px;
+    padding: 3vh 3vh;
     display: flex;
     flex-direction: column;
 }
 
 .tab-content.active div {
     margin-top: 2.5vh;
+    margin-bottom: 0.5vh;
+}
+
+#gender-container {
+    display: flex;
 }
